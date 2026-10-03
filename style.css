@@ -267,3 +267,32 @@ html{
 }
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#6C5CE7">
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #F5F0FF, #E8DFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.logo-placeholder {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.splash-content h1 {
+    font-size: 2.5rem;
+    color: #5B4DB8;
+    margin-bottom: 10px;
+}
+
+.splash-content p {
+    font-size: 1rem;
+    color: #6B6B6B;
+}

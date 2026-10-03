@@ -188,3 +188,12 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.getElementById("splash-screen").style.display = "none";
+
+    }, 2000);
+
+});
