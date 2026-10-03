@@ -176,3 +176,15 @@ notes.value = localStorage.getItem("notes") || "";
 notes.addEventListener("input", function () {
     localStorage.setItem("notes", notes.value);
 });
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("Service Worker registered!");
+      })
+      .catch((error) => {
+        console.log("Service Worker registration failed:", error);
+      });
+  });
+}
