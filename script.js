@@ -162,10 +162,26 @@ function renderApp() {
 
     updateDashboard();
 
+    updateGreeting();
+
 }
 
 // ---------- Start ----------
+function updateGreeting() {
 
+    const hour = new Date().getHours();
+
+    const greeting = document.getElementById("greeting");
+
+    if (hour < 12) {
+        greeting.textContent = "🌅 Good Morning";
+    } else if (hour < 17) {
+        greeting.textContent = "☀️ Good Afternoon";
+    } else {
+        greeting.textContent = "🌙 Good Evening";
+    }
+
+}
 renderApp();
 // Notes
 
@@ -188,12 +204,35 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
-window.addEventListener("load", () => {
+/* =========================
+   Welcome Screens
+========================= */
 
-    setTimeout(() => {
+const screens = document.querySelectorAll(".screen");
+const nextButtons = document.querySelectorAll(".next-btn");
+const startBtn = document.getElementById("startBtn");
+const container = document.querySelector(".container");
 
-        document.getElementById("splash-screen").style.display = "none";
+let currentScreen = 0;
 
-    }, 2000);
+// Logo → Splash 1
+setTimeout(() => {
+    screens[0].classList.remove("active");
+    currentScreen = 1;
+    screens[currentScreen].classList.add("active");
+}, 2000);
 
+// Next Button
+nextButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        screens[currentScreen].classList.remove("active");
+        currentScreen++;
+        screens[currentScreen].classList.add("active");
+    });
+});
+
+// Get Started
+startBtn.addEventListener("click", () => {
+    document.getElementById("welcome-screen").style.display = "none";
+    container.style.display = "flex";
 });

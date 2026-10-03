@@ -16,17 +16,49 @@
 </head>
 
 <body>
-    <div id="splash-screen">
+    
+<div id="welcome-screen">
 
-    <div class="splash-content">
+    <!-- Logo Screen -->
+    <div class="screen active" id="logoScreen">
 
-        <div class="logo-placeholder">
-            🌱
-        </div>
+        <img src="images/logo.jpg" alt="HabitFlow Logo">
 
-        <h1>HabitFlow</h1>
+    </div>
 
-        <p>Better Habits. Better You.</p>
+    <!-- Splash Card 1 -->
+    <div class="screen" id="screen1">
+
+        <img src="images/splash1.jpg" alt="Splash 1">
+
+        <button class="next-btn">Next →</button>
+
+    </div>
+
+    <!-- Splash Card 2 -->
+    <div class="screen" id="screen2">
+
+        <img src="images/splash2.jpg" alt="Splash 2">
+
+        <button class="next-btn">Next →</button>
+
+    </div>
+
+    <!-- Splash Card 3 -->
+    <div class="screen" id="screen3">
+
+        <img src="images/splash3.jpg" alt="Splash 3">
+
+        <button class="next-btn">Next →</button>
+
+    </div>
+
+    <!-- Splash Card 4 -->
+    <div class="screen" id="screen4">
+
+        <img src="images/splash4.jpg" alt="Splash 4">
+
+        <button id="startBtn">Get Started</button>
 
     </div>
 
@@ -38,52 +70,74 @@
 
     <aside class="sidebar">
 
+    <div class="sidebar-logo">
+
+        <img src="images/logo.jpg" alt="HabitFlow Logo">
+
         <h2>HabitFlow</h2>
 
-        <ul>
+    </div>
 
-            <a href="#dashboard">🏠 Dashboard</a>
-            <a href="#habit-tracker">📅 Habit Tracker</a>
+    <nav>
 
-        </ul>
+        <a href="#dashboard" class="active">
+            🏠 <span>Dashboard</span>
+        </a>
 
-    </aside>
+        <a href="#habit-tracker">
+            📅 <span>Habit Tracker</span>
+        </a>
+
+    </nav>
+
+</aside>
 
     <!-- Main -->
 
     <main class="main">
 
-        <header>
+    <header class="dashboard-header">
 
-            <h1>Dashboard</h1>
+    <div>
+        <h1 id="greeting">👋 Welcome!</h1>
 
-            <p>
-                Build better habits every day.
-            </p>
+        <p class="quote">
+            Better Habits.<br>Better You.
+        </p>
+    </div>
 
-        </header>
+    <div class="goal-card">
+
+        <h3>🎯 Today's Goal</h3>
+
+        <p>Complete all your habits</p>
+
+    </div>
+
+</header>
 
         <!-- Dashboard Cards -->
 
         <section id="dashboard"class="cards">
 
             <div class="card">
-                <h3>Total Habits</h3>
+                <h3>📚 Total Habits</h3>
                 <p id="totalHabits">0</p>
             </div>
 
             <div class="card">
-                <h3>Today's Progress</h3>
+                <h3>🎯 Today's Progress</h3>
                 <p id="todayProgress">0%</p>
             </div>
 
             <div class="card">
-                <h3>Monthly Progress</h3>
+              <h3>📈 Monthly Progress</h3>
+
                 <p id="monthlyProgress">0%</p>
             </div>
 
             <div class="card">
-                <h3>Current Streak</h3>
+                <h3>🔥 Current Streak</h3>
                 <p id="currentStreak">0</p>
             </div>
 
