@@ -265,8 +265,7 @@ html{
 .sidebar a:hover{
     color:#3b82f6;
 }
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#6C5CE7">
+
 #splash-screen {
     position: fixed;
     inset: 0;
