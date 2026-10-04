@@ -1,223 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>habit flow-website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <title>HabitFlow</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-
-    <meta name="theme-color" content="#6C5CE7">
-
 </head>
 
 <body>
-    
-<div id="welcome-screen">
+    <div id="splash">
+<img id="logo" src="logo.jpg" alt="HabitFlow Logo">
 
-    <!-- Logo Screen -->
-    <div class="screen active" id="logoScreen">
+    <h1>HabitFlow</h1>
 
-        <img src="images/logo.jpg" alt="HabitFlow Logo">
+    <p>Build Better Habits</p>
+
+</div>
+<div id="onboarding" style="display:none;">
+
+    <img id="splashImage" src="splash1.jpg">
+
+    <button id="getStartedBtn">Get Started
+
+    </button>
+
+
+</div>
+    <div class="container">
+
+    <aside class="sidebar">
+
+        <h2>HabitFlow</h2>
+
+<nav>
+
+    <a href="#dashboard" class="nav-link active">🏠 Dashboard</a>
+
+    <a href="#habitSection" class="nav-link">📅 Habit Tracker</a>
+
+    <a href="#notesSection" class="nav-link">📝 Notes</a>
+
+</nav>
+
+<div class="quote">
+    <div class="quote-leaf">🌿</div>
+
+    <p id="quoteText"></p>
+
+</div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="header" id="dashboard">
+
+    <div>
+
+        <h1>Dashboard</h1>
+
+        <p>Build better habits every day.</p>
+        <p id="currentDate"></p>
 
     </div>
 
-    <!-- Splash Card 1 -->
-    <div class="screen" id="screen1">
+    <div class="profile">
 
-        <img src="images/splash1.jpg" alt="Splash 1">
-
-        <button class="next-btn">Next →</button>
+        👤
 
     </div>
 
-    <!-- Splash Card 2 -->
-    <div class="screen" id="screen2">
+</header>
+<section class="cards">
 
-        <img src="images/splash2.jpg" alt="Splash 2">
-
-        <button class="next-btn">Next →</button>
-
+    <div class="card">
+        <h3>Total Habits</h3>
+        <p id="totalHabits">0</p>
     </div>
+<div class="card">
 
-    <!-- Splash Card 3 -->
-    <div class="screen" id="screen3">
+    <h3>Today's Progress</h3>
 
-        <img src="images/splash3.jpg" alt="Splash 3">
+    <div class="progress-ring">
 
-        <button class="next-btn">Next →</button>
+        <svg width="120" height="120">
 
-    </div>
+            <circle
+                class="bg"
+                cx="60"
+                cy="60"
+                r="50">
+            </circle>
 
-    <!-- Splash Card 4 -->
-    <div class="screen" id="screen4">
+            <circle
+                id="progressCircle"
+                class="progress"
+                cx="60"
+                cy="60"
+                r="50">
+            </circle>
 
-        <img src="images/splash4.jpg" alt="Splash 4">
+        </svg>
 
-        <button id="startBtn">Get Started</button>
+        <div id="todayProgress" class="progress-text">
+            0%
+        </div>
 
     </div>
 
 </div>
 
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <aside class="sidebar">
-
-    <div class="sidebar-logo">
-
-        <img src="images/logo.jpg" alt="HabitFlow Logo">
-
-        <h2>HabitFlow</h2>
-
+    <div class="card">
+        <h3>Monthly Progress</h3>
+        <p id="monthlyProgress">0%</p>
     </div>
 
-    <nav>
+    <div class="card">
+        <h3>Current Streak</h3>
+        <p id="currentStreak">0</p>
+    </div>
 
-        <a href="#dashboard" class="active">
-            🏠 <span>Dashboard</span>
-        </a>
+</section>
+<section class="habit-section" id="habitSection">
 
-        <a href="#habit-tracker">
-            📅 <span>Habit Tracker</span>
-        </a>
+    <div class="section-header">
 
-    </nav>
-
-</aside>
-
-    <!-- Main -->
-
-    <main class="main">
-
-    <header class="dashboard-header">
+    <h2>Habit Tracker</h2>
 
     <div>
-        <h1 id="greeting">👋 Welcome!</h1>
 
-        <p class="quote">
-            Better Habits.<br>Better You.
-        </p>
+        <input
+            type="text"
+            id="searchHabit"
+            placeholder="🔍 Search Habit">
+            <select id="monthSelector">
+
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+
+</select>
+
+        <button id="addHabitBtn">
+            + Add Habit
+        </button>
+
     </div>
 
-    <div class="goal-card">
+</div>
 
-        <h3>🎯 Today's Goal</h3>
+    <div class="habit-container">
+        <table>
 
-        <p>Complete all your habits</p>
+    <thead>
+
+        <tr>
+
+            <th>Habit</th>
+            <th>Target</th>
+            <th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+<th>16</th>
+<th>17</th>
+<th>18</th>
+<th>19</th>
+<th>20</th>
+<th>21</th>
+<th>22</th>
+<th>23</th>
+<th>24</th>
+<th>25</th>
+<th>26</th>
+<th>27</th>
+<th>28</th>
+<th>29</th>
+<th>30</th>
+<th>31</th>
+
+            <th>Progress</th>
+            <th>Delete</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="habitBody">
+
+    </tbody>
+
+</table>
 
     </div>
 
-</header>
+</section>
+<section class="achievement-section">
 
-        <!-- Dashboard Cards -->
+    <h2>🏆 Achievements</h2>
 
-        <section id="dashboard"class="cards">
+    <div class="achievement-grid">
 
-            <div class="card">
-                <h3>📚 Total Habits</h3>
-                <p id="totalHabits">0</p>
-            </div>
+        <div class="achievement locked" id="badge1">
+            🌱
+            <h3>First Step</h3>
+            <p>Complete your first habit</p>
+        </div>
 
-            <div class="card">
-                <h3>🎯 Today's Progress</h3>
-                <p id="todayProgress">0%</p>
-            </div>
+        <div class="achievement locked" id="badge2">
+            🔥
+            <h3>7 Day Streak</h3>
+            <p>Complete 7 habit days</p>
+        </div>
 
-            <div class="card">
-              <h3>📈 Monthly Progress</h3>
+        <div class="achievement locked" id="badge3">
+            ⭐
+            <h3>Habit Master</h3>
+            <p>Complete 15 habit days</p>
+        </div>
 
-                <p id="monthlyProgress">0%</p>
-            </div>
+        <div class="achievement locked" id="badge4">
+            👑
+            <h3>Consistency King</h3>
+            <p>Complete 30 habit days</p>
+        </div>
 
-            <div class="card">
-                <h3>🔥 Current Streak</h3>
-                <p id="currentStreak">0</p>
-            </div>
+    </div>
 
-        </section>
-        <!-- Habit Tracker -->
+</section>
 
-        <section id="habit-tracker"class="habit-section">
-
-            <div class="section-header">
-
-                <h2>Habit Tracker</h2>
-
-                <button id="addHabitBtn">
-                    + Add Habit
-                </button>
-
-            </div>
-
-            <div id="habitTableContainer">
-
-                <table id="habitTable">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Habit</th>
-                            <th>Target</th>
-
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                            <th>4</th>
-                            <th>5</th>
-                            <th>6</th>
-                            <th>7</th>
-                            <th>8</th>
-                            <th>9</th>
-                            <th>10</th>
-                            <th>11</th>
-                            <th>12</th>
-                            <th>13</th>
-                            <th>14</th>
-                            <th>15</th>
-                            <th>16</th>
-                            <th>17</th>
-                            <th>18</th>
-                            <th>19</th>
-                            <th>20</th>
-                            <th>21</th>
-                            <th>22</th>
-                            <th>23</th>
-                            <th>24</th>
-                            <th>25</th>
-                            <th>26</th>
-                            <th>27</th>
-                            <th>28</th>
-                            <th>29</th>
-                            <th>30</th>
-                            <th>31</th>
-
-                            <th>%</th>
-                            <th>Delete</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="habitBody">
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
-        <!-- Notes Section -->
-
-<section class="notes-section">
+<section class="notes-section" id="notesSection">
 
     <h2>📝 Notes</h2>
 
@@ -227,11 +265,10 @@
     </textarea>
 
 </section>
-        </main>
 
-</div>
+    </main>
 
 <script src="script.js"></script>
-
 </body>
+
 </html>
